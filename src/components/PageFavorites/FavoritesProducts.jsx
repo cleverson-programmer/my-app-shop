@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image';
 import { useFavorites } from '../../context/FavoritesContext';
 
 export function FavoriteProducts(){
@@ -8,9 +9,11 @@ export function FavoriteProducts(){
         <div className='grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6'>
             {favorites.length > 0 ? (
             favorites.map(product => (
-              <div className='m-4 bg-slate-100 flex justify-center rounded-md border border-solid border-gray-500'>
-                <div key={product.id}>
-                    <img 
+              <div key={product.id} className='m-4 bg-slate-100 flex justify-center rounded-md border border-solid border-gray-500'>
+                <div>
+                    <Image
+                    width={260}
+                    height={260}
                     className='w-[260px] h-[260px]'
                     src={product.image} 
                     alt={product.name} />

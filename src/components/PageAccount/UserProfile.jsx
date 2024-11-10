@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import { IconRosetteDiscountCheck, IconRosetteDiscountCheckOff } from "@tabler/icons-react";
+import Image from "next/image";
 
 const UserProfile = ({ user }) => {
   return (
@@ -8,7 +9,9 @@ const UserProfile = ({ user }) => {
       <div className="border border-solid border-gray-300 bg-slate-100 w-[400px] h-[500px] rounded-md">
         <div className="bg-blue-600 w-full h-[20%] rounded-t-md"></div>
         <div className="border border-solid flex justify-center relative">
-          <img
+          <Image
+            width={90}
+            height={90}
             className="rounded-full absolute top-[-50px]"
             src={user ? user.photoURL : "/default-avatar.jpg"}
             alt="User Avatar"
