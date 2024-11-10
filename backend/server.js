@@ -177,7 +177,7 @@ const products = [
 ]
 
 // Rota de produtos
-app.get('/products', (req, res) => {
+app.get('/', (req, res) => {
   res.json(products);
 });
 

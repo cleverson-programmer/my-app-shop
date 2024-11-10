@@ -74,7 +74,7 @@ export function ThreeDCardDemo() {
               
               <CardItem translateZ="100" rotateX={20} rotateZ={-10} className="w-full mt-4">
                 <Image
-                  src={`/images/${product.image}`}
+                  src={`${product.image}`}
                   height={360}
                   width={360}
                   className="h-60 w-full object-cover rounded-xl "
