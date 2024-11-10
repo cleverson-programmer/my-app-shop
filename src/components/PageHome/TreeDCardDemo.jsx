@@ -18,6 +18,8 @@ export function ThreeDCardDemo() {
   const [quantity, setQuantity] = useState(1);
   const { favorites, toggleFavorite } = useFavorites();
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+
     useEffect(() => {
       const getProducts = async () => {
         const data = await fetchProducts();
@@ -74,7 +76,7 @@ export function ThreeDCardDemo() {
               
               <CardItem translateZ="100" rotateX={20} rotateZ={-10} className="w-full mt-4">
                 <Image
-                  src={`${product.image}`}
+                  src={`https://my-shop-store-beta.vercel.app${product.image}`}
                   height={360}
                   width={360}
                   className="h-60 w-full object-cover rounded-xl "
