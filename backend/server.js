@@ -6,7 +6,7 @@ const PORT = 5000;
 
 
 // Middleware
-app.use(cors());
+app.use(cors({ origin: 'https://my-shop-store-beta.vercel.app' }));
 app.use(express.json());
 
 // Configuração para servir arquivos estáticos da pasta 'images'

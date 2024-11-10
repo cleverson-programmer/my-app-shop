@@ -20,13 +20,17 @@ export function ThreeDCardDemo() {
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
-    useEffect(() => {
-      const getProducts = async () => {
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
         const data = await fetchProducts();
         setProducts(data);
-      };
-      getProducts();
-    }, []);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+    getProducts();
+  }, []);
 
     const isFavorite = (productId) => favorites.some(fav => fav.id === productId);
 
